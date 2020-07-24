@@ -1,0 +1,105 @@
+/**
+* Rangeslider
+*/
+.rangeslider {
+    position: relative;
+    background: #e6e6e6;
+    -ms-touch-action: none;
+    touch-action: none;
+  }
+  .rangeslider,
+  .rangeslider .rangeslider__fill {
+    display: block;
+  }
+
+  .rangeslider .rangeslider__handle {
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    z-index: 100;
+  }
+  .rangeslider .rangeslider__handle .rangeslider__active {
+    opacity: 1;
+  }
+
+  /**
+* Rangeslider - Vertical slider
+*/
+.rangeslider-vertical {
+    /* nothing to do */  
+  }
+
+  .rangeslider-vertical .rangeslider__fill,
+  .rangeslider-vertical .rangeslider__handle {
+    position: absolute;
+  }
+
+  .rangeslider-vertical .rangeslider__fill {
+
+  }
+  
+  .rangeslider-vertical .rangeslider__handle {
+    position: absolute;
+    z-index: 1;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    cursor: move;
+    user-select: none;
+    
+  }
+  
+  .rangeslider-vertical .rangeslider__handle:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    /* margin-top: -1px; */
+    height: 1px;
+    background: rgba(255, 255, 255, 0.75);
+  }
+  /**
+  * Rangeslider - Labels
+  */
+  .rangeslider__labels {
+    position: absolute;
+  }
+  .rangeslider-vertical .rangeslider__labels {
+    position: absolute;
+    list-style-type: none;  
+  }
+
+  .rangeslider-vertical .rangeslider__labels .rangeslider__label-item {
+    position: absolute;
+    transform: translate3d(0, -50%, 0);
+  }
+  .rangeslider-vertical .rangeslider__labels .rangeslider__label-item::before {
+    content: '';
+    position: absolute;
+    /* transform: translateY(-50%); */
+    z-index: -1;
+  }
+  .tick-container {
+    position:absolute;
+  }
+  
+  .tick-containerL {
+    
+  }
+  
+  .ticks {
+    position:relative;
+  }
+  
+  .rangeslider__labels {
+    
+  }
+
+  .rangeslider__labels .rangeslider__label-item {
+    position: absolute;
+    cursor: pointer;
+    /* display: inline-block; */
+    /* transform: translate3d(-50%, 0, 0); */
+  }

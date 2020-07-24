@@ -1,0 +1,89 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+.mixer {
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+.vStrip {
+  
+  margin: 1px;
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px)
+  }
+  100% {
+    transform: translateY(0px)
+  }
+}
+
+.flex-container {
+  user-select: none;
+  background: DarkSlateGray;
+  box-shadow: 0 0 0 1px #646464;
+  border-radius: 4px;
+  padding: 3px; /* Important! */
+  margin: 10px;  /*Outer padding*/
+  width: 120px;  /* Important! */
+  padding:3px;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column; /* tested -- this is the one*/
+  justify-content: stretch;
+  align-items: stretch;
+  text-align: center;
+  font-size: 12px;
+}
+
+.left{
+  /*flex-grow:0;*/
+  display:flex;
+  align-items: stretch;
+  flex-direction: column;
+  width:85px;
+  background-color: DarkKhaki;
+  
+  border: 1px solid green;
+  border-radius:8px;
+}
+
+.right{
+  flex-grow:1;
+  width:auto;
+  background-color: LightSlateGrey;
+  
+}

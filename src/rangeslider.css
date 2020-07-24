@@ -1,0 +1,242 @@
+/**
+* Rangeslider
+*/
+.rangeslider {
+  margin: 20px 0;
+  position: relative;
+  background: #e6e6e6;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+.rangeslider,
+.rangeslider .rangeslider__fill {
+  display: block;
+  /* SK EDIT -- this adjusts border of the TRACK*/
+  box-shadow: inset 0 1px 3px rgba(200, 200, 200, 0.4);
+  /*box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);*/
+  
+}
+.rangeslider .rangeslider__handle {
+  background:  rgba(231, 99, 99, 0.5); /* SK EDIT */
+  border: 1px solid red;    /*SK EDIT */
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 -1px 3px rgba(0, 0, 0, 0.4);
+}
+.rangeslider .rangeslider__handle .rangeslider__active {
+  opacity: 1;
+}
+.rangeslider .rangeslider__handle-tooltip {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-weight: normal;
+  font-size: 14px;
+  transition: all 100ms ease-in;
+  border-radius: 4px;
+  display: inline-block;
+  color: white;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+.rangeslider .rangeslider__handle-tooltip span {
+  margin-top: 12px;
+  display: inline-block;
+  line-height: 100%;
+}
+.rangeslider .rangeslider__handle-tooltip:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/**
+* Rangeslider - Vertical slider
+*/
+.rangeslider-vertical {
+  /* SK EDIT This changes the top margin (how much it is pushed down) slider */
+  margin: 20px auto;
+  /* SK EDIT This changes the height of the slider */
+  height: 350px;
+  max-width: 16px; /* 16 */
+  /* SK EDIT This changes the inside of the TRACK */
+  /* background-color: transparent; 
+  background-color: darkslategrey; */
+
+  /*background: darkslategrey;*/
+  background: 
+  linear-gradient(to bottom, rgba(48,48,48,1) 0%,rgba(48,48,48,1) 1%,rgba(0,0,0,0) 1%,rgba(0,0,0,0) 99%,rgba(48,48,48,1) 99%,rgba(48,48,48,1) 100%),
+  linear-gradient(to right, rgba(48,48,48,1) 0%, rgba(36,36,36,1) 35%, rgba(0,0,0,1) 50%, rgba(36,36,36,1) 65%, rgba(48,48,48,1) 100%);
+  
+  border: solid 1px black;
+  border-radius: 5px;
+  box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.25) inset;
+
+
+}
+.rangeslider-vertical .rangeslider__fill,
+.rangeslider-vertical .rangeslider__handle {
+  position: absolute;
+}
+.rangeslider-vertical .rangeslider__fill {
+  width: 4px;
+  left:6px;
+  background-color: rgba(78,204,255,0.5);
+  /*margin-bottom: 6px;*/
+  /* background: linear-gradient(to bottom, rgba(48,48,48,1) 0%,rgba(48,48,48,1) 1%,rgba(0,127,0,1) 5%,rgba(0,127,0,1) 95%,rgba(48,48,48,1) 99%,rgba(48,48,48,1) 100%); */
+  border-radius: 0px 0px 5px 5px;
+  /* border: solid 0.5px black; */
+  box-shadow: none;
+  /* bottom: 0; */
+}
+.rangeslider-vertical .rangeslider__handle {
+  width: 34px;
+  height: 56px;  /* SK EDIT HEIGHT OF THUMB */
+  left: -10px;
+  box-shadow: none;
+}
+
+
+.rangeslider-vertical .rangeslider__handle {
+  position: absolute;
+  z-index: 1;
+  border: none;
+  height: 56px; /* IMPORTANT */
+  width: 34px;
+  left: -10px; /* IMPORTANT */
+  outline: none;
+  border-radius: 0px;
+  cursor: move;
+  user-select: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 5px, black 6px), 
+  linear-gradient(0deg, #464646 0%, #5a5a5a 14%, #141414 15%, #141414 50%, #5a5a5a 84%, #141414 85%, #1e1e1e 100%);
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.5);
+}
+.rangeslider-vertical .rangeslider__handle:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -1px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.rangeslider-vertical .rangeslider__handle-tooltip {
+  left: -100%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+    /*SK: FIX FOR SELECTION OF TOOLTIP*/
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.rangeslider-vertical .rangeslider__handle-tooltip:after {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid rgba(0, 0, 0, 0.8);
+  left: 100%;
+  top: 12px;
+}
+
+
+
+/**
+* Rangeslider - Reverse
+*/
+.rangeslider-reverse.rangeslider-horizontal .rangeslider__fill {
+  right: 0;
+}
+.rangeslider-reverse.rangeslider-vertical .rangeslider__fill {
+  top: 0;
+  bottom: inherit;
+}
+/**
+* Rangeslider - Labels
+*/
+.rangeslider__labels {
+  position: relative;
+}
+.rangeslider-vertical .rangeslider__labels {
+  position: relative;
+  list-style-type: none;
+  margin: 0 0 0 -60px;
+  padding: 0;
+  text-align: right;
+  width: 20px;
+  height: 100%;
+  left: -10px;
+  
+}
+.rangeslider-vertical .rangeslider__labels .rangeslider__label-item {
+  position: absolute;
+  transform: translate3d(0, -50%, 0);
+}
+.rangeslider-vertical .rangeslider__labels .rangeslider__label-item::before {
+  content: '';
+  width: calc(var(--line-height) * 6);
+  height: var(--line-height);
+  background: grey;
+  opacity: 0.75;
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  z-index: -1;
+}
+.tick-container {
+  position:absolute;
+  
+  width: 24px;
+  height: calc(348px - 16px);
+  border: 1px solid rgba(255, 0, 0, 0);
+  padding-top:8px;
+  padding-bottom:8px;
+}
+
+.tick-containerL {
+  left: -26px;
+}
+.tick-containerR {
+  right: -24px;
+}
+
+.ticks {
+  position:relative;
+  background: repeating-linear-gradient(transparent, transparent 6.56px, silver 6.56px, silver 7.56px);
+  /* the transparent 'stop' defines the gap between ticks */
+  /* the silver 'stops' define the height of each tick */
+  opacity: 0.25;
+  width: 10px;
+  height:100%; 
+}
+
+/* .ticksR{
+  left:12px;
+  height: 340px;
+  margin-top: -6.56px;
+  margin-bottom: 3.28px;
+} */
+
+
+.rangeslider__labels .rangeslider__label-item {
+  position: absolute;
+  font-size: 10px;
+  color: lightgrey;
+  cursor: pointer;
+  display: inline-block;
+  width: 20px!important;
+  top: 10px;
+  /* transform: translate3d(-50%, 0, 0); */
+}
